@@ -9,7 +9,13 @@
 */
 
 // Start coding here
+// const addBonusForSelectedDepartment = (employeeInfo,bonus,department) =>
+  // const total = employeeInfo.salary.map(n => n + bonus)
 
+
+
+// console.log(addBonusForSelectedDepartment(employeeInfo, 5000, "HR")); // 69000
+// console.log(addBonusForSelectedDepartment(employeeInfo, 1000, "Operations")); // 67000
 const employeeInfo = [
   {
     firstname: "Alice",
@@ -60,6 +66,13 @@ const employeeInfo = [
     salary: 34000,
   },
 ];
+
+function addBonusForSelectedDepartment(employeeInfo,bonus,department){
+  let result = employeeInfo.filter((item) => item.department === department).map((item) => item.salary + bonus).reduce((acc,arr) => acc + arr,0 )
+  return result
+}
+
+// }
 
 console.log(addBonusForSelectedDepartment(employeeInfo, 5000, "HR")); // 69000
 console.log(addBonusForSelectedDepartment(employeeInfo, 1000, "Operations")); // 67000
